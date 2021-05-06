@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { responsive } from '../../components';
+import { fonts } from '../../constants';
 
 const { wp, hp, fs } = responsive;
 
@@ -20,13 +21,14 @@ const styles = StyleSheet.create({
   },
   tempTitle: {
     fontSize: fs(72),
-    fontWeight: 'bold',
+    fontFamily: fonts.Poppins_600SemiBold,
   },
   infoTitle: {
     fontSize: fs(32),
     fontWeight: '500',
     textAlign: 'center',
     marginBottom: hp(4),
+    fontFamily: fonts.Poppins_300Light,
   },
   infoList: {
     marginBottom: hp(1.5),

@@ -4,6 +4,7 @@ import AwesomeIcon from '@expo/vector-icons/FontAwesome5';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeScreen from './screens/home/index';
+import HistoryScreen from './screens/history/index';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,7 +28,7 @@ const Index = () => {
         />
         <Tab.Screen
           name="History"
-          component={HomeScreen}
+          component={HistoryScreen}
           options={{
             tabBarIcon: ({ color: clr }) => <AwesomeIcon name="history" color={clr} size={16} />,
           }}
