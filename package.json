@@ -11,9 +11,12 @@
     "@expo-google-fonts/inter": "^0.1.0",
     "@expo-google-fonts/poppins": "^0.1.0",
     "@react-native-community/masked-view": "0.1.10",
+    "@react-native-picker/picker": "^1.16.0",
     "@react-navigation/bottom-tabs": "^5.11.9",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.4",
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.4",
     "expo": "~40.0.0",
     "expo-app-loading": "^1.0.3",
     "expo-font": "~8.4.0",
@@ -23,12 +26,14 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
     "react-native-elements": "^3.3.2",
     "react-native-gesture-handler": "~1.8.0",
+    "react-native-maps": "0.27.1",
     "react-native-reanimated": "~1.13.0",
     "react-native-responsive-fontsize": "^0.5.0",
     "react-native-responsive-screen": "^1.4.2",
     "react-native-safe-area-context": "3.1.9",
     "react-native-screens": "~2.15.2",
-    "react-native-web": "~0.13.12"
+    "react-native-web": "~0.13.12",
+    "zustand": "^3.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"

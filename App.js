@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'react-native-elements';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-
 import AppLoading from 'expo-app-loading';
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
+
 import Navigation from './src';
+import useStore from './src/store';
 import theme from './src/theme/index';
 
 import {
@@ -14,7 +16,11 @@ import {
   Poppins_600SemiBold,
 } from '@expo-google-fonts/poppins';
 
+dayjs.locale('id');
+
 export default function App() {
+  const [stateReady, setStateReady] = useState(false);
+  const store = useStore();
   let [fontsLoaded] = useFonts({
     Poppins_300Light,
     Poppins_400Regular,
@@ -22,15 +28,22 @@ export default function App() {
     Poppins_600SemiBold,
   });
 
-  if (!fontsLoaded) {
+  useEffect(() => {
+    const fetchStateData = async () => {
+      await Promise.all([store.getDateState(), store.getActualData(), store.getLocationData()]);
+      setStateReady(true);
+    };
+
+    fetchStateData();
+  }, []);
+
+  if (!fontsLoaded && !stateReady) {
     return <AppLoading />;
   }
 
   return (
-    <SafeAreaProvider>
-      <ThemeProvider theme={theme}>
-        <Navigation />
-      </ThemeProvider>
-    </SafeAreaProvider>
+    <ThemeProvider theme={theme}>
+      <Navigation />
+    </ThemeProvider>
   );
 }

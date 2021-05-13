@@ -13,18 +13,31 @@ const styles = StyleSheet.create({
   },
   tempWraper: {
     flex: 1,
-    justifyContent: 'center',
+    alignItems: 'center',
     paddingHorizontal: wp(10),
+    flexDirection: 'row',
   },
   infoWraper: {
-    flex: 1,
+    flex: 1.4,
   },
   tempTitle: {
     fontSize: fs(72),
     fontFamily: fonts.Poppins_600SemiBold,
   },
+  celcius: {
+    fontSize: fs(30),
+    fontFamily: fonts.Poppins_400Regular,
+    marginTop: hp(-8),
+  },
   infoTitle: {
     fontSize: fs(32),
+    fontWeight: '500',
+    textAlign: 'center',
+    marginBottom: hp(1),
+    fontFamily: fonts.Poppins_300Light,
+  },
+  infoSubtitle: {
+    fontSize: fs(18),
     fontWeight: '500',
     textAlign: 'center',
     marginBottom: hp(4),

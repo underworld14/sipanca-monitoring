@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeScreen from './screens/home/index';
 import HistoryScreen from './screens/history/index';
+import MapScreen from './screens/maps/index';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,7 +22,7 @@ const Index = () => {
         />
         <Tab.Screen
           name="Maps"
-          component={HomeScreen}
+          component={MapScreen}
           options={{
             tabBarIcon: ({ color: clr }) => <AwesomeIcon name="map" color={clr} size={16} />,
           }}
