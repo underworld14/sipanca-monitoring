@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "sipanca",
-    "slug": "sipanca",
+    "name": "Sipanca Monitoring",
+    "slug": "sipanca-monitoring",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,16 +13,23 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
+      "bundleIdentifier": "com.izzadev.sipancamonitoring",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.izzadev.sipancamonitoring",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBnz7WJYHS82KGmMn8-QO3gs0KAMtsUV00"
+        }
       }
     },
     "web": {
