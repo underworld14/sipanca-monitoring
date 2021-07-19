@@ -14,7 +14,7 @@ const App = () => {
   const store = useStore();
   const currentLocation = store.locations.find((location) => location.id === store.currentLocation);
 
-  console.log(currentLocation)
+  console.log(currentLocation);
 
   useFocusEffect(
     useCallback(() => {
@@ -27,7 +27,7 @@ const App = () => {
       <StatusBar style="light" translucent />
       <View style={styles.locationWraper}>
         <Ionicons name="location" size={24} />
-        <Text style={styles.locationTitle}>{currentLocation.nama}</Text>
+        <Text style={styles.locationTitle}>{currentLocation?.nama}</Text>
       </View>
       <View style={styles.tempWraper}>
         <Text style={styles.tempTitle}>{store.actual?.suhu} </Text>
