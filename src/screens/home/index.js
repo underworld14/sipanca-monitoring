@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { View, ImageBackground, Text, Image } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import dayjs from 'dayjs';
 
 import useStore from '../../store';
@@ -11,6 +12,9 @@ import styles from './styles';
 
 const App = () => {
   const store = useStore();
+  const currentLocation = store.locations.find((location) => location.id === store.currentLocation);
+
+  console.log(currentLocation)
 
   useFocusEffect(
     useCallback(() => {
@@ -21,6 +25,10 @@ const App = () => {
   return (
     <ImageBackground source={assets.bacgroundImg} style={styles.backgroundContainer}>
       <StatusBar style="light" translucent />
+      <View style={styles.locationWraper}>
+        <Ionicons name="location" size={24} />
+        <Text style={styles.locationTitle}>{currentLocation.nama}</Text>
+      </View>
       <View style={styles.tempWraper}>
         <Text style={styles.tempTitle}>{store.actual?.suhu} </Text>
         <Text style={styles.celcius}>C°</Text>

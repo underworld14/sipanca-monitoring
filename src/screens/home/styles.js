@@ -11,8 +11,20 @@ const styles = StyleSheet.create({
   backgroundContainer: {
     flex: 1,
   },
+  locationWraper: {
+    flexDirection: 'row',
+    flex: 0.5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: wp(5),
+  },
+  locationTitle: {
+    marginLeft: wp(2),
+    fontSize: fs(16),
+    fontFamily: fonts.Poppins_600SemiBold,
+  },
   tempWraper: {
-    flex: 1,
+    flex: 0.5,
     alignItems: 'center',
     paddingHorizontal: wp(10),
     flexDirection: 'row',
