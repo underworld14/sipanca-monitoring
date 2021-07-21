@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { StatusBar } from 'expo-status-bar';
 import dayjs from 'dayjs';
 
@@ -17,6 +18,7 @@ const Index = () => {
   const store = useStore();
   const [date, setDate] = useState(store.actual.tanggal);
   const [current, setCurrent] = useState(store.actual);
+  const currentLocation = store.locations.find((location) => location.id === store.currentLocation);
 
   useFocusEffect(
     useCallback(() => {
@@ -58,6 +60,10 @@ const Index = () => {
   return (
     <ImageBackground style={styles.backgroundContainer} source={assets.bacgroundImg}>
       <StatusBar style="light" translucent />
+      <View style={styles.locationWraper}>
+        <Ionicons name="location" size={24} />
+        <Text style={styles.locationTitle}>{currentLocation?.nama}</Text>
+      </View>
       <View style={styles.header}>
         <Text style={styles.title}>History</Text>
         <View style={styles.dateChanger}>

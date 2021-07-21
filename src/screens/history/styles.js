@@ -8,9 +8,19 @@ const styles = StyleSheet.create({
   backgroundContainer: {
     flex: 1,
   },
+  locationWraper: {
+    flexDirection: 'row',
+    flex: 0.5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  locationTitle: {
+    marginLeft: wp(2),
+    fontSize: fs(16),
+    fontFamily: fonts.Poppins_600SemiBold,
+  },
   header: {
-    flex: 1.5,
-    paddingHorizontal: wp(6),
+    flex: 0.5,
     justifyContent: 'center',
   },
   title: {
@@ -29,8 +39,9 @@ const styles = StyleSheet.create({
     fontFamily: fonts.Poppins_400Regular,
   },
   content: {
-    flex: 4,
-    alignItems: 'center',
+    flex: 2,
+    justifyContent: 'center',
+    // alignItems: 'center',
     paddingHorizontal: wp(6),
   },
 });

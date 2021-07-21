@@ -14,8 +14,6 @@ const App = () => {
   const store = useStore();
   const currentLocation = store.locations.find((location) => location.id === store.currentLocation);
 
-  console.log(currentLocation);
-
   useFocusEffect(
     useCallback(() => {
       store.getActualData();
