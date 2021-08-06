@@ -14,7 +14,7 @@ export default function App() {
 
   useEffect(() => {
     if (_map.current) {
-      _map.current.setCamera(
+      _map.current.animateCamera(
         {
           center: {
             latitude: Number(currentLocation.kordinat.latitude),
