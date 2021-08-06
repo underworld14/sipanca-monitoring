@@ -37,7 +37,7 @@ export default function App() {
     fetchStateData();
   }, []);
 
-  if (!fontsLoaded && !stateReady) {
+  if (!fontsLoaded || !stateReady) {
     return <AppLoading />;
   }
 
