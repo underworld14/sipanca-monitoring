@@ -16,19 +16,16 @@ const Api = new Adapter();
 
 const Index = () => {
   const store = useStore();
-  const [date, setDate] = useState(store.actual.tanggal);
+  const [date, setDate] = useState(dayjs(store.actual.tanggal).format('YYYY-MM-DD'));
   const [current, setCurrent] = useState(store.actual);
   const currentLocation = store.locations.find((location) => location.id === store.currentLocation);
 
   useFocusEffect(
     useCallback(() => {
-      store.getActualData();
-    }, [])
+      setCurrent(store.actual);
+      setDate(dayjs(store.actual.tanggal).format('YYYY-MM-DD'));
+    }, [store.actual])
   );
-
-  useEffect(() => {
-    setDate(store.actual.tanggal);
-  }, [store.actual.tanggal]);
 
   useEffect(() => {
     const fetchCurrent = async () => {
@@ -41,9 +38,9 @@ const Index = () => {
 
   const updateDate = (type) => {
     if (type === 'tommorrow') {
-      if (!dayjs(date).isAfter(store.dateState.last_date)) {
+      if (!dayjs(date).add(1, 'day').isAfter(store.dateState.last_date)) {
         setTimeout(() => {
-          setDate((date) => dayjs(date).add(1, 'day'));
+          setDate((date) => dayjs(date).add(1, 'day').format('YYYY-MM-DD'));
         }, 200);
       }
     }
@@ -51,7 +48,7 @@ const Index = () => {
     if (type === 'yesterday') {
       if (!dayjs(date).subtract(1, 'day').isBefore(store.dateState.first_date)) {
         setTimeout(() => {
-          setDate((date) => dayjs(date).subtract(1, 'day'));
+          setDate((date) => dayjs(date).subtract(1, 'day').format('YYYY-MM-DD'));
         }, 200);
       }
     }
@@ -68,11 +65,13 @@ const Index = () => {
         <Text style={styles.title}>History</Text>
         <View style={styles.dateChanger}>
           <TouchableOpacity onPress={() => updateDate('yesterday')}>
-            <AntDesign name="caretleft" size={26} style={{ marginRight: 10 }} />
+            <AntDesign name="caretleft" size={26} style={{ marginRight: 25 }} />
           </TouchableOpacity>
-          <Text style={styles.date}>{dayjs(date).format('dddd, DD-MM-YYYY')}</Text>
+          <View style={styles.dateWraper}>
+            <Text style={styles.date}>{dayjs(date).format('dddd, DD-MM-YYYY')}</Text>
+          </View>
           <TouchableOpacity onPress={() => updateDate('tommorrow')}>
-            <AntDesign name="caretright" size={26} style={{ marginLeft: 10 }} />
+            <AntDesign name="caretright" size={26} style={{ marginLeft: 25 }} />
           </TouchableOpacity>
         </View>
       </View>

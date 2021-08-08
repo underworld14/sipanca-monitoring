@@ -7,13 +7,17 @@ const useStore = create((set, get) => ({
   /** date stats */
   dateState: null,
   getDateState: async () => {
-    const response = await ApiAdapter.getDateStats();
+    const response = await ApiAdapter.getDateStats(get().currentLocation);
     set({ dateState: response.data });
   },
 
   /** location state */
   currentLocation: 1,
-  setLocation: (newLocation) => set({ currentLocation: newLocation }),
+  setLocation: async (newLocation) => {
+    set({ currentLocation: newLocation });
+    await get().getDateState();
+    await get().getActualData();
+  },
 
   /** actual data */
   actual: null,
