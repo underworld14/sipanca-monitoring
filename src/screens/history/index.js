@@ -78,7 +78,7 @@ const Index = () => {
       <View style={styles.content}>
         <InfoCard icon={assets.humidity} title="Kelembapan" value={current?.kelembapan} />
         <InfoCard icon={assets.sun} title="Intensitas Cahaya" value={current?.intensitas_cahaya} />
-        <InfoCard icon={assets.wind} title="Kualitas Udara" value={current?.pm} />
+        <InfoCard icon={assets.pm} title="Kualitas Udara" value={current?.pm} />
         <InfoCard icon={assets.rain} title="Curah Hujan" value={current?.curah_hujan} />
         <InfoCard icon={assets.wind} title="Kecepatan Angin" value={current?.kecepatan_angin} />
         <InfoCard icon={assets.compass} title="Arah Angin" value={current?.arah_angin} />

@@ -50,7 +50,7 @@ const App = () => {
           <InfoTable
             title="Kualitas Udara"
             value={store.actual?.pm}
-            icon={<Image source={assets.humidity} style={styles.iconImg} />}
+            icon={<Image source={assets.pm} style={styles.iconImg} />}
           />
           <InfoTable
             title="Curah Hujan"
@@ -62,7 +62,7 @@ const App = () => {
           <InfoTable
             title="Kecepatan Angin"
             value={store.actual?.kecepatan_angin}
-            icon={<Image source={assets.humidity} style={styles.iconImg} />}
+            icon={<Image source={assets.wind} style={styles.iconImg} />}
           />
           <InfoTable
             title="Arah Angin"

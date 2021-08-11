@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   icon: {
     width: '80%',
     height: '80%',
-    resizeMode: 'cover',
+    resizeMode: 'contain',
   },
   titleInfo: {
     width: '30%',

@@ -4,6 +4,7 @@ const humidity = require('./humidity.png');
 const rain = require('./rain.png');
 const sun = require('./sun.png');
 const wind = require('./wind.png');
+const pm = require('./pm.png');
 
 module.exports = {
   bacgroundImg,
@@ -12,4 +13,5 @@ module.exports = {
   rain,
   sun,
   wind,
+  pm,
 };
